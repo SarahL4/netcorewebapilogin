@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class gitUserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
   readonly BaseURI = 'http://localhost:50646/api';
@@ -50,8 +50,8 @@ export class UserService {
   }
 
   getUserProfile() {
-    var tokenHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('token')});
-    return this.http.get(this.BaseURI + '/UserProfile', { headers: tokenHeader });
+    // var tokenHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('token')});
+    return this.http.get(this.BaseURI + '/UserProfile');
   }
 
 }
